@@ -63,8 +63,8 @@ echo '<hr><pre>', var_dump($response);
 
 require '/path/to/PipeStackFactory.php';
 
-// Instantiate a new PipeStack object, using the config file DevPipeStackConfig.php
-$PipeStack = PipeStackFactory::build('Dev');
+// Instantiate a new PipeStack object, using the config file CustomPipeStackConfig.php
+$PipeStack = PipeStackFactory::build('Custom');
 
 // Create a new node. Replace "your domain here" with your domain
 try{
