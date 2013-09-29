@@ -35,13 +35,14 @@ interface InterfacePipeStackCurl {
 
     /**
      * Make a request with initialized cURL and set options
+     * parameters are expected to be x-www-form-urlencoded string, json encoded string or xml encoded string
      *
      * @param string $method
      * @param string $url
-     * @param array $params
+     * @param string $params
      * @return mixed
      */
-    public function request($method, $url, array $params = array());
+    public function request($method, $url, $params= '');
 
     /**
      * Get the http status code associated with the request's response

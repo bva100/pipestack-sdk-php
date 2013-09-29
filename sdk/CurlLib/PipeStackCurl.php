@@ -140,11 +140,18 @@ class PipeStackCurl implements InterfacePipeStackCurl {
     /**
      * Set parameters to be sent with request
      *
-     * @param array $params
+     * @param string $params
+     * @param string $contentType
      */
-    public function setRequestParams(array $params)
+    public function setRequestParams($params, $contentType = '')
     {
-        $this->setOption('POSTFIELDS', http_build_query($params));
+        if ( $contentType === 'json' ){
+            $contentType = 'application/json';
+        }else if( $contentType === 'xml'){
+            $contentType = 'application/xml';
+        }
+        // TO DO: add content type header here without overriding all previously set headers. Should create "addHeader" method.
+        $this->setOption('POSTFIELDS', $params);
     }
 
     /**
@@ -152,15 +159,16 @@ class PipeStackCurl implements InterfacePipeStackCurl {
      *
      * @param string $method
      * @param string $url
-     * @param array $params
+     * @param string $params
+     * @param string $contentType
      * @return mixed
      * @throws RuntimeException
      */
-    public function request($method, $url, array $params = array())
+    public function request($method, $url, $params = '', $contentType = '')
     {
         $this->setRequestMethod($method);
-        if ( ! empty($params) ){
-            $this->setRequestParams($params);
+        if ( $params ){
+            $this->setRequestParams($params, $contentType);
         }
         $this->setOption('URL', $url);
         $response = curl_exec($this->ch);

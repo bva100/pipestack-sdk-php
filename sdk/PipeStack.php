@@ -115,14 +115,17 @@ class PipeStack  {
     }
 
     /**
-     * Add whichever headers are need for the request to the first parameter, $header. Authorization will automatically be added.
+     * Add whichever headers are need for the request to the first parameter, $header. Authorization will automatically be added nad content type will default to application json.
      *
      * @param array $headers
      * @return array
      */
     public function getHeaders(array $headers = array())
     {
-        $headers[] = 'Authorization: '.$this->config->getAccessToken();
+        $headers = array(
+            'Authorization: '.$this->config->getAccessToken(),
+            'Content-Type: application/json',
+        );
         return $headers;
     }
 
@@ -192,7 +195,7 @@ class PipeStack  {
         if ( $format === 'json' ){
             $params = json_encode($params);
         }
-        $response = $this->curlLib->request('POST', $this->getEndpointUrl($endpoint), array('objectParams' => $params));
+        $response = $this->curlLib->request('POST', $this->getEndpointUrl($endpoint), $params, $format);
         return $this->decodeResponse($response);
     }
 
@@ -227,7 +230,7 @@ class PipeStack  {
         if ( $format === 'json' ){
             $params = json_encode($params);
         }
-        $response = $this->curlLib->request('PATCH', $this->getEndpointUrl($endpoint), array('objectParams' => $params));
+        $response = $this->curlLib->request('PATCH', $this->getEndpointUrl($endpoint), $params, $format);
         $this->checkResponseStatus($response, $this->getRequestFormat());
         return true;
     }
