@@ -1,5 +1,4 @@
 #PipeStack SDK for PHP
----
 
 The **PipeStack SDK for PHP** enables PHP developers to easily work with PipeStack's backend CMS services. The FULL documentation can be found at http://developers.pipestack.com/docs/sdk/php .
 
@@ -16,7 +15,7 @@ The **PipeStack SDK for PHP** enables PHP developers to easily work with PipeSta
 4. **Get your credentials** – Follow the instructions found at http://developers.pipestack.com/docs/basics to get your credentials.
 5. **Create your config** – Create your config file by following the instructions found at http://developers.pipestack.com/docs/sdk/php. Essentially you'll be copying and pasting your credentials found in step 4 into a config file called "ProdPipeStackConfig.php" or "DevPipeStackConfig.php".
 
-## Quick Example
+## Quick Examples
 
 ```php
 <?php
@@ -33,7 +32,52 @@ try{
     echo  '<h1>EXCEPTION THROWN:</h1><p>', $e->getMessage(), '</p>';
 }
 
-echo '<pre>', var_dump($response); die();
+echo '<hr><pre>', var_dump($response);
+
+```
+
+```php
+<?php
+
+require '/path/to/PipeStackFactory.php';
+
+// Instantiate a new PipeStack object, using the config file DevPipeStackConfig.php
+$PipeStack = PipeStackFactory::build('Dev');
+
+// Get a media resource object. Replace 12345 with the ID of your media resource
+try{
+    $response = $PipeStack->get('media/12345');
+}catch (PipeStackException $e){
+    echo  '<h1>EXCEPTION THROWN:</h1><p>', $e->getMessage(), '</p>';
+}
+
+echo '<h1>' . $response->media->metadata->title . '</h1>';
+echo '<img src="'.$response->media->url.'">';
+
+echo '<hr><pre>', var_dump($response);
+
+```
+
+```php
+<?php
+
+require '/path/to/PipeStackFactory.php';
+
+// Instantiate a new PipeStack object, using the config file DevPipeStackConfig.php
+$PipeStack = PipeStackFactory::build('Dev');
+
+// Create a new node. Replace "your domain here" with your domain
+try{
+    $response = $PipeStack->create('node', array(
+        'title' => 'new node title',
+        'domain' => 'your domain here',
+        'slug' => 'new-foobar-node',
+    ));
+}catch (PipeStackException $e){
+    echo  '<h1>EXCEPTION THROWN:</h1><p>', $e->getMessage(), '</p>';
+}
+
+echo '<hr><pre>', var_dump($response);
 
 ```
 
