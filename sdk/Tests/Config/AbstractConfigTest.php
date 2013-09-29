@@ -36,5 +36,5 @@ class AbstractConfigTest extends \PHPUnit_Framework_TestCase {
 }
 
 class ConcreteConfig extends AbstractPipeStackConfig {
-    protected $accessToken = 'foobar'; protected $format = 'fooformat'; protected $protocol = 'http://'; protected $hostname = 'api.pipestack.com'; protected $timeout = 20;
+    protected $clientId = 'boom'; protected $clientSecret = 'foo'; protected $accessToken = 'foobar'; protected $format = 'fooformat'; protected $protocol = 'http://'; protected $hostname = 'api.pipestack.com'; protected $timeout = 20;
 }
