@@ -22,7 +22,7 @@ The **PipeStack SDK for PHP** enables PHP developers to easily work with PipeSta
 
 require '/path/to/PipeStackFactory.php';
 
-// Instantiate a new PipeStack object, using the config file ProdPipeStackConfig.php
+// Instantiate a new PipeStack object using the config file ProdPipeStackConfig.php
 $PipeStack = PipeStackFactory::build('Prod');
 
 // Get a collection of nodes
@@ -41,7 +41,7 @@ echo '<hr><pre>', var_dump($response);
 
 require '/path/to/PipeStackFactory.php';
 
-// Instantiate a new PipeStack object, using the config file DevPipeStackConfig.php
+// Instantiate a new PipeStack object using the config file DevPipeStackConfig.php
 $PipeStack = PipeStackFactory::build('Dev');
 
 // Get a media resource object. Replace 12345 with the ID of your media resource
@@ -63,7 +63,7 @@ echo '<hr><pre>', var_dump($response);
 
 require '/path/to/PipeStackFactory.php';
 
-// Instantiate a new PipeStack object, using the config file CustomPipeStackConfig.php
+// Instantiate a new PipeStack object using the config file CustomPipeStackConfig.php
 $PipeStack = PipeStackFactory::build('Custom');
 
 // Create a new node. Replace "your domain here" with your domain
