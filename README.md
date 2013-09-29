@@ -4,9 +4,9 @@ The **PipeStack SDK for PHP** enables PHP developers to easily work with PipeSta
 
 ## Features
 
--Provides an easy-to-use HTTP client for all supported PipeStack endpoints and authentication protocols.
--Create multiple config classes to handle different environments
--Provides a built in factory to abstract away the logic associated with instantiating the SDK
+- Provides an easy-to-use HTTP client for all supported PipeStack endpoints and authentication protocols.
+- Create multiple config classes to handle different environments
+- Provides a built in factory to abstract away the logic associated with instantiating the SDK
 
 ## Getting Started
 1. **Sign up for PipeStack** – Before you begin, you'll need a PipeStack account. Set one up at http://pipestack.com/user/register .
