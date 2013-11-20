@@ -35,6 +35,18 @@ class PipeStackTest extends \PHPunit_Framework_TestCase {
         $this->assertEquals($accessToken, $this->PipeStack->getAccessToken());
     }
 
+    public function testGetClientId()
+    {
+        $clientId = $this->config->getClientId();
+        $this->assertEquals($clientId, $this->PipeStack->getClientId());
+    }
+
+    public function testGetClientSecret()
+    {
+        $clientSecret = $this->config->getClientSecret();
+        $this->assertEquals($clientSecret, $this->PipeStack->getClientSecret());
+    }
+
     public function testGetProtocol()
     {
         $protocol = $this->config->getProtocol();

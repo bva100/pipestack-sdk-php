@@ -77,6 +77,19 @@ class PipeStack  {
     /**
      * @return string
      */
+    public function getClientId()
+    {
+        return $this->config->getClientId();
+    }
+
+    public function getClientSecret()
+    {
+        return $this->config->getClientSecret();
+    }
+
+    /**
+     * @return string
+     */
     public function getProtocol()
     {
         return $this->config->getProtocol();

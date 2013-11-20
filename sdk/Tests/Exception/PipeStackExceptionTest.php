@@ -29,7 +29,7 @@ class PipeStackExceptionTest extends PHPUnit_Framework_TestCase {
      */
     public function testPipeStackRequestException()
     {
-        throw new PipeStackRequestException('request failed because a foobar was in the way. The NSA placed it there, for sure.');
+        throw new PipeStackRequestException('request failed because a foobar was in the way.');
     }
 
     /**
@@ -45,7 +45,7 @@ class PipeStackExceptionTest extends PHPUnit_Framework_TestCase {
      */
     public function testPipeStackServerException()
     {
-        throw new PipeStackServerException('request failed because our servers are in the process of melting. Please try again later.');
+        throw new PipeStackServerException('request failed because our servers are in the process of melting. Grilled cheese anyone? Please try again later.');
     }
 
 }

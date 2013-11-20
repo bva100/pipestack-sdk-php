@@ -111,13 +111,13 @@ class PipeStackCurlTest extends \PHPUnit_Framework_TestCase {
 
     public function testStatusCode200()
     {
-        $this->curlLib->request('GET', 'http://localhost');
+        $this->curlLib->request('GET', 'http://api.localhost.local:3000');
         $this->assertEquals($this->curlLib->getStatus(), 200);
     }
 
     public function testStatusCode404()
     {
-        $this->curlLib->request('GET', 'http://localhostapi/demoNotHereEver.php');
+        $this->curlLib->request('GET', 'http://api.localhost.local:3000/demoNotHereEver.php');
         $this->assertEquals($this->curlLib->getStatus(), 404);
     }
 
