@@ -78,10 +78,12 @@ class PipeStackTest extends \PHPunit_Framework_TestCase {
 
     public function testGetHeaders()
     {
-        $authHeader = 'Authorization: '.$this->config->getAccessToken();
+        $clientIdHeader = 'Client-Id: '.$this->config->getClientId();
+        $clientSecretHeader = 'Client-Secret: '.$this->config->getClientSecret();
         $headers = $this->PipeStack->getHeaders();
         $this->assertInternalType('array', $headers);
-        $this->assertContains($authHeader, $headers);
+        $this->assertContains($clientIdHeader, $headers);
+        $this->assertContains($clientSecretHeader, $headers);
     }
 
     public function testGetEndpointUrl()

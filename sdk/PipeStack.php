@@ -136,7 +136,8 @@ class PipeStack  {
     public function getHeaders(array $headers = array())
     {
         $headers = array(
-            'Authorization: '.$this->config->getAccessToken(),
+            'Client-Id: '.$this->config->getClientId(),
+            'Client-Secret: '.$this->config->getClientSecret(),
             'Content-Type: application/json',
         );
         return $headers;
