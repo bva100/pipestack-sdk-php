@@ -8,7 +8,7 @@ class DevPipeStackConfig extends AbstractPipeStackConfig {
 
     protected $clientSecret = 'YOUR DEV CLIENT SECRET GOES HERE';
 
-    protected $accessToken = 'YOUR DEV ACCESS TOKEN GOES HERE';
+    protected $accessToken = 'OPTIONAL';
 
     protected $protocol = 'http://';
 

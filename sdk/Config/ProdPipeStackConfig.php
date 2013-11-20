@@ -8,7 +8,7 @@ class ProdPipeStackConfig extends AbstractPipeStackConfig {
 
     protected $clientSecret = 'YOUR LIVE PRODUCTION CLIENT SECRET GOES HERE';
 
-    protected $accessToken = 'YOUR LIVE PRODUCTION APP ACCESS TOKEN GOES HERE';
+    protected $accessToken = 'OPTIONAL';
 
     protected $protocol = 'http://';
 

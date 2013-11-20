@@ -335,7 +335,7 @@ class PipeStack  {
     private function jsonException($data)
     {
         $meta = $data->meta;
-        return $meta->status.' '.$meta->description.' '.$meta->message.' For more info please visit: '.$meta->moreInfo;
+        return $meta->status.' '.$meta->description.' '.$meta->message.' For more info please visit: '.$meta->more_info;
     }
 
 }
