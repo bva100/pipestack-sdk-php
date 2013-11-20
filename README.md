@@ -1,6 +1,6 @@
 #PipeStack SDK for PHP
 
-The **PipeStack SDK for PHP** enables PHP developers to easily work with PipeStack's backend CMS services. The FULL documentation can be found at http://pipestack.com/developers/docs/sdk/php .
+The **PipeStack SDK for PHP** enables PHP developers to easily work with PipeStack's backend CMS services. The FULL documentation can be found at http://pipestack.com/developers/sdk/php .
 
 ## Features
 
@@ -12,8 +12,8 @@ The **PipeStack SDK for PHP** enables PHP developers to easily work with PipeSta
 1. **Sign up for PipeStack** – Before you begin, you'll need a PipeStack account. Set one up at http://pipestack.com/users/sign_up .
 2. **Minimum requirements** – Be sure your version of PHP is compiled with the cURL extension. The SDK works best with php 5.3.3+.
 3. **Install the SDK** – Click the "Download ZIP" button above. Once the files finish downloading, unzip and place the library into your project.
-4. **Get your credentials** – Follow the instructions found at http://developers.pipestack.com/docs/basics to get your credentials.
-5. **Create your config** – Create your config file by following the instructions found at http://pipestack.com/developers/docs/sdk/php. Essentially you'll be copying and pasting your credentials found in step 4 into a config file called "ProdPipeStackConfig.php" or "DevPipeStackConfig.php".
+4. **Get your credentials** – Follow the instructions found at http://pipestack.com/developers/basics to get your credentials.
+5. **Create your config** – Create your config file by following the instructions found at http://pipestack.com/developers/sdk/php. Essentially you'll be copying and pasting your credentials found in step 4 into a config file called "ProdPipeStackConfig.php" or "DevPipeStackConfig.php".
 
 ## Quick Examples
 
@@ -81,4 +81,4 @@ echo '<hr><pre>', var_dump($response);
 
 ```
 
-**Get more examples at http://pipestack.com/developers/docs/sdk/php**
+**Get more examples at http://pipestack.com/developers/sdk/php**
